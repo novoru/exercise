@@ -83,13 +83,17 @@ int main(int argc, char **argv) {
 	stack_push(stack, (void*)((int)stack_pop(stack) + (int)stack_pop(stack)));
 	break;
       case '-':
-	stack_push(stack, (void*)((int)stack_pop(stack) - (int)stack_pop(stack)));
+	;
+	int sub = (int)stack_pop(stack);
+	stack_push(stack, (void*)((int)stack_pop(stack) - sub));
 	break;
       case '*':
 	stack_push(stack, (void*)((int)stack_pop(stack) * (int)stack_pop(stack)));
 	break;
       case '/':
-	stack_push(stack, (void*)((int)stack_pop(stack) / (int)stack_pop(stack)));
+	;
+	int denom = (int)stack_pop(stack);
+	stack_push(stack, (void*)((int)stack_pop(stack) / denom));
 	break;
       }
     }
